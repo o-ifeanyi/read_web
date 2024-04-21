@@ -1,9 +1,12 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+import 'dart:html' as html;
+
 import 'package:flutter/material.dart';
 import 'package:read_web/util/config.dart';
+import 'package:read_web/util/constants.dart';
 import 'package:read_web/util/context_utils.dart';
 import 'package:read_web/widgets/default_app_bar.dart';
 import 'package:read_web/widgets/device_area.dart';
-import 'package:read_web/widgets/early_access.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -43,8 +46,48 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Config.vGap15,
-            const EarlyAccess(),
+            Config.vGap30,
+            Row(
+              children: [
+                Expanded(
+                  child: FilledButton.icon(
+                    onPressed: () =>
+                        html.window.open(Constants.playStore, '_blank'),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                    icon: const Icon(Icons.android),
+                    label: const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      child: Text('Android'),
+                    ),
+                  ),
+                ),
+                Config.hGap20,
+                Expanded(
+                  child: FilledButton.icon(
+                    onPressed: () =>
+                        html.window.open(Constants.appStore, '_blank'),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                    ),
+                    icon: const Icon(Icons.apple),
+                    label: const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      child: Text('iOS'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Config.vGap60,
             const DeviceArea(),
             Config.vGap60,
