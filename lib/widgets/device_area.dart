@@ -166,7 +166,7 @@ class AnimatedItem extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: context.colorScheme.background,
+            color: context.colorScheme.surface,
           ),
           child: Column(
             children: [

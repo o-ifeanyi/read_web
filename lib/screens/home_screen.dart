@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () =>
                         html.window.open(Constants.playStore, '_blank'),
                     style: ButtonStyle(
-                      shape: MaterialStateProperty.all(
+                      shape: WidgetStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -73,7 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () =>
                         html.window.open(Constants.appStore, '_blank'),
                     style: ButtonStyle(
-                      shape: MaterialStateProperty.all(
+                      shape: WidgetStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
